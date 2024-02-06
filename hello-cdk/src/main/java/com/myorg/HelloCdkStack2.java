@@ -2,16 +2,13 @@ package com.myorg;
 
 import dev.stratospheric.cdk.DockerRepository;
 import software.amazon.awscdk.Environment;
-import software.constructs.Construct;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
+import software.constructs.Construct;
 
-public class HelloCdkStack extends Stack {
-  public HelloCdkStack(final Construct scope, final String id) {
-    this(scope, id, null);
-  }
+public class HelloCdkStack2 extends Stack {
 
-  public HelloCdkStack(final Construct scope, final String id, final StackProps props) {
+  public HelloCdkStack2(final Construct scope, final String id, final StackProps props, final String repoName) {
     super(scope, id, props);
 
     Environment environment = props.getEnv();
@@ -21,7 +18,9 @@ public class HelloCdkStack extends Stack {
       "repository",
       environment,
       new DockerRepository.DockerRepositoryInputParameters(
-        "hello-world-repo", environment.getAccount(), 10));
+        repoName,
+        environment.getAccount(),
+        10));
   }
 
 }

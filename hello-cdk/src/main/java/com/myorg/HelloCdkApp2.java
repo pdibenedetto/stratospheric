@@ -4,7 +4,7 @@ import software.amazon.awscdk.App;
 import software.amazon.awscdk.Environment;
 import software.amazon.awscdk.StackProps;
 
-public class HelloCdkApp {
+public class HelloCdkApp2 {
   public static void main(final String[] args) {
 
     // 285338032503
@@ -16,12 +16,15 @@ public class HelloCdkApp {
     String region = (String) app.getNode().tryGetContext("region");
     requireNonEmpty(region, "context variable 'region' must not be null");
 
+    String repoName = (String) app.getNode().tryGetContext("repoName");
+
     Environment env = makeEnv(accountId, region);
 
-    new HelloCdkStack(app, "HelloCdkStack",
+    new HelloCdkStack2(app, "HelloCdkStack2",
       StackProps.builder()
         .env(env)
-        .build());
+        .build(),
+      repoName);
 
     app.synth();
   }
