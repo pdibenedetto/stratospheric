@@ -13,6 +13,9 @@
     ]
   },
   "context": {
+    "region": "us-east-1",
+    "accountId": "285338032503",
+    "repoName": "app-stack-repo",
     "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
     "@aws-cdk/core:checkSecretUsage": true,
     "@aws-cdk/core:target-partitions": [
