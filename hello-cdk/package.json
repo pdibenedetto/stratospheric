@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "repository:deploy": "cdk deploy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.DockerRepositoryApp\" --require-approval never --profile stratospheric",
-    "repository:destroy": "cdk deploy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.DockerRepositoryApp\" --require-approval never --profile stratospheric"
+    "repository:destroy": "cdk destroy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.DockerRepositoryApp\" --require-approval never --profile stratospheric",
+    "network:deploy": "cdk deploy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.NetworkApp\" --require-approval never --profile stratospheric",
+    "network:destroy": "cdk destroy --app \"./mvnw -e -q compile exec:java -Dexec.mainClass=com.myorg.NetworkApp\" --require-approval never --profile stratospheric"
   },
   "devDependencies": {
     "aws-cdk": "2.126.0"
